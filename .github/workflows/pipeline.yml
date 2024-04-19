@@ -21,6 +21,6 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Start UNIT tests
-      run: npm test
+      run: npm run test:unit
     - name: Softuni Display Username
       run: echo "monstersbg"
