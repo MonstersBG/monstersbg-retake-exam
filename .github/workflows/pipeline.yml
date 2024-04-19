@@ -24,3 +24,22 @@ jobs:
       run: npm run test:unit
     - name: Softuni Display Username
       run: echo "monstersbg"
+  build_and_test_UI:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js version 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install Dependencies
+      run: npm install
+    - name: Install npx playwright
+      run: npx playwright install
+    - name: start the Application
+      run: npm run start
+    - name: Start UNIT tests
+      run: npm run test:ui
